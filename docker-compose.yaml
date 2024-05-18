@@ -1,0 +1,23 @@
+# create docker compose file
+version: '3.7'
+services:
+  web:
+  # set working directory
+    working_dir: /app
+    image: gg
+    command: 'gradle assembleDebug'
+    # mount local dir
+    # create env vars
+    environment:
+      - ANDROID_HOME=/android_sdk
+      - ANDROID_SDK_ROOT=/android_sdk
+      - ANDROID_AVD_HOME=/android_sdk/.android/avd
+      - ANDROID_SDK_HOME=/android_sdk/.android
+      - ANDROID_NDK_HOME=/android_sdk/ndk-bundle
+      - ANDROID_NDK_ROOT=/android_sdk/ndk-bundle
+      - ANDROID_NDK=/android_sdk/ndk-bundle
+      - ANDROID_NDK_PATH=/android_sdk/ndk-bundle
+      - ANDROID_SDK=/android_sdk
+      - ANDROID_SDK_PATH=/android_sdk
+    volumes:
+      - /Users/isaaccarrington/AndroidStudioProjects/mybanana:/app
