@@ -4,7 +4,7 @@ services:
   web:
   # set working directory
     working_dir: /app
-    image: gg
+    image: android-sdk-img
     command: 'gradle assembleDebug'
     # mount local dir
     # create env vars
